@@ -2,9 +2,8 @@ import { Montserrat, Raleway } from 'next/font/google'
 import React from 'react'
 import { BiStar } from 'react-icons/bi'
 import { BsWallet } from 'react-icons/bs'
-import { FaStar, FaStarHalf } from 'react-icons/fa6'
 import { ImCancelCircle } from 'react-icons/im'
-import { IoStarHalfOutline, IoStarOutline, IoStarSharp } from 'react-icons/io5'
+import { IoStarHalfOutline, IoStarSharp } from 'react-icons/io5'
 import { SlLocationPin } from 'react-icons/sl'
 
 const raleway = Raleway({

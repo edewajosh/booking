@@ -26,7 +26,7 @@ const MidSection = () => {
     {
         'icon': <SlLocationPin/>,
         'description': 'Best Locations',
-        'color': 'text-green-500'      
+        'color': 'text-blue-500'      
      },
      {
         'icon': <ImCancelCircle/>,
@@ -36,7 +36,7 @@ const MidSection = () => {
      {
         'icon': <BsWallet/>,
         'description': 'Payment Options',
-        'color': 'text-blue-500'
+        'color': 'text-green-500'
      }
     ]
   return (
@@ -50,7 +50,7 @@ const MidSection = () => {
            {values.map((value, index) => (
             <div key={index} className='flex items-center gap-2 text-2xl mt-3'>
                 <p className={value.color}>{value.icon}</p>
-                <p className='text-xl text-gray-700 md:text-2xl ${raleway.className}'>{value.description}</p>
+                <p className='font-bold text-xl text-gray-700 md:text-2xl ${raleway.className}'>{value.description}</p>
             </div>
            ))}
         </div>
@@ -66,7 +66,7 @@ const MidSection = () => {
                 </div>
                 <p>Clients Love us!</p>
             </div>
-            <button className='bg-black hover:bg-black text-white font-bold py-2 px-4 rounded ${raleway.className}'>Explore Now</button>
+            <button className='bg-black hover:bg-black text-white font-bold py-2 px-4 rounded-md ${raleway.className}'>Explore Now</button>
         </div>
     </div>
   )

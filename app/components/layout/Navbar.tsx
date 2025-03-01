@@ -4,7 +4,21 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
+import { Montserrat, Raleway } from 'next/font/google'
+import { BsCalendarWeek } from 'react-icons/bs';
+ 
+const montserrat = Montserrat({
+  weight: '800',
+  subsets: ['cyrillic'],
+})
+
+const raleway = Raleway({
+  weight: '600',
+  subsets: ['latin'],
+  variable: '--font-raleway'
+})
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState<number | null>(null);
@@ -14,16 +28,18 @@ export default function Navbar() {
     setSubmenuOpen((prev) => (prev === index ? null : index));
 
   return (
-    <nav className="bg-transparent fixed w-full z-50">
+    <nav className={`bg-transparent w-full z-50 ${raleway.className}`}>
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-white">
+        <Image 
+          src="/logo/logo-light.svg" alt="logo" width={150} height={150}/>
+        {/* <Link href="/" className="text-2xl font-bold text-white">
           Booking
-        </Link>
+        </Link> */}
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          {['Home', 'Services', 'Portfolio', 'Contact'].map((item, index) => (
+          {['Listings', 'Our Story', 'Experience', 'Rooms & Suites', 'Offers', 'Gallery'].map((item, index) => (
             <div key={index} className="relative">
               <button
                 onClick={() => toggleSubmenu(index)}
@@ -50,8 +66,11 @@ export default function Navbar() {
         </div>
 
         {/* Login Button */}
-        <Link href="/login" className="hidden md:block px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-300">
-          Login
+        <Link href="/login" className="hidden md:block px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-gray-700"> 
+          <div className="flex items-center space-x-2">
+            <BsCalendarWeek />
+            <span>Book a Stay</span>
+          </div>
         </Link>
 
         {/* Mobile Menu Button */}

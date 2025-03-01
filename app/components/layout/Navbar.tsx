@@ -38,7 +38,7 @@ export default function Navbar() {
         </Link> */}
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden sm:flex space-x-6 "> 
           {['Listings', 'Our Story', 'Experience', 'Rooms & Suites', 'Offers', 'Gallery'].map((item, index) => (
             <div key={index} className="relative">
               <button
@@ -111,8 +111,11 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
             ))}
-            <Link href="/login" className="block text-center p-4 bg-white text-gray-900">
-              Login
+            <Link href="/login" className="block text-center p-4 bg-blue-800 text-white-900">
+              <div className="flex items-center space-x-2">
+                <BsCalendarWeek />
+                <span>Book a Stay</span>
+              </div>
             </Link>
           </motion.div>
         )}
